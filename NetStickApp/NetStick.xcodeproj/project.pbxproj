@@ -1,0 +1,483 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		BB3D4894 /* DeviceStatus.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD54DE61 /* DeviceStatus.swift */; };
+		BBA4C811 /* DeviceStatusBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD083B7E /* DeviceStatusBar.swift */; };
+		DD200001 /* NetStickApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD100001 /* NetStickApp.swift */; };
+		DD200002 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD100002 /* ContentView.swift */; };
+		DD200003 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DD100003 /* Assets.xcassets */; };
+		DD200004 /* BLECommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD100004 /* BLECommand.swift */; };
+		DD200005 /* NetworkDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD100005 /* NetworkDevice.swift */; };
+		DD200006 /* Vulnerability.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD100006 /* Vulnerability.swift */; };
+		DD200007 /* BLEResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD100007 /* BLEResponse.swift */; };
+		DD200008 /* OpenPort.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD100008 /* OpenPort.swift */; };
+		DD200009 /* WiFiNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD100009 /* WiFiNetwork.swift */; };
+		DD200010 /* BLEConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD100010 /* BLEConstants.swift */; };
+		DD200011 /* BluetoothManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD100011 /* BluetoothManager.swift */; };
+		DD200012 /* ScannerViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD100012 /* ScannerViewModel.swift */; };
+		DD200013 /* ConnectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD100013 /* ConnectionView.swift */; };
+		DD200014 /* DeviceDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD100014 /* DeviceDetailView.swift */; };
+		DD200015 /* NetworkScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD100015 /* NetworkScanView.swift */; };
+		DD200016 /* WiFiScanView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD100016 /* WiFiScanView.swift */; };
+		DD200017 /* Components.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD100017 /* Components.swift */; };
+/* End PBXBuildFile section */
+
+
+/* Begin PBXFileReference section */
+		DD54DE61 /* DeviceStatus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceStatus.swift; sourceTree = "<group>"; };
+		DD083B7E /* DeviceStatusBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceStatusBar.swift; sourceTree = "<group>"; };
+		AC2065C22F0D0E2E0022101F /* NetStick.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NetStick.app; sourceTree = BUILT_PRODUCTS_DIR; };
+
+		DD100001 /* NetStickApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetStickApp.swift; sourceTree = "<group>"; };
+		DD100002 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		DD100003 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DD100004 /* BLECommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLECommand.swift; sourceTree = "<group>"; };
+		DD100005 /* NetworkDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkDevice.swift; sourceTree = "<group>"; };
+		DD100006 /* Vulnerability.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Vulnerability.swift; sourceTree = "<group>"; };
+		DD100007 /* BLEResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEResponse.swift; sourceTree = "<group>"; };
+		DD100008 /* OpenPort.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenPort.swift; sourceTree = "<group>"; };
+		DD100009 /* WiFiNetwork.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiNetwork.swift; sourceTree = "<group>"; };
+		DD100010 /* BLEConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEConstants.swift; sourceTree = "<group>"; };
+		DD100011 /* BluetoothManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothManager.swift; sourceTree = "<group>"; };
+		DD100012 /* ScannerViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScannerViewModel.swift; sourceTree = "<group>"; };
+		DD100013 /* ConnectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConnectionView.swift; sourceTree = "<group>"; };
+		DD100014 /* DeviceDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceDetailView.swift; sourceTree = "<group>"; };
+		DD100015 /* NetworkScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkScanView.swift; sourceTree = "<group>"; };
+		DD100016 /* WiFiScanView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WiFiScanView.swift; sourceTree = "<group>"; };
+		DD100017 /* Components.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Components.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		AC2065BF2F0D0E2E0022101F /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+
+		AC2065C42F0D0E2E0022101F /* NetStick */ = {
+			isa = PBXGroup;
+			children = (
+				DD100001 /* NetStickApp.swift */,
+				DD100002 /* ContentView.swift */,
+				DD100003 /* Assets.xcassets */,
+				DD000001 /* Models */,
+				DD000002 /* Utils */,
+				DD000003 /* ViewModels */,
+				DD000004 /* Views */,
+			);
+			path = NetStick;
+			sourceTree = "<group>";
+		};
+		DD000001 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				DD100004 /* BLECommand.swift */,
+				DD100005 /* NetworkDevice.swift */,
+				DD100006 /* Vulnerability.swift */,
+				DD100007 /* BLEResponse.swift */,
+				DD100008 /* OpenPort.swift */,
+				DD100009 /* WiFiNetwork.swift */,
+			
+				DD54DE61 /* DeviceStatus.swift */,);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		DD000002 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				DD100010 /* BLEConstants.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		DD000003 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				DD100011 /* BluetoothManager.swift */,
+				DD100012 /* ScannerViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		DD000004 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				DD100013 /* ConnectionView.swift */,
+				DD100014 /* DeviceDetailView.swift */,
+				DD100015 /* NetworkScanView.swift */,
+				DD100016 /* WiFiScanView.swift */,
+				DD000005 /* Components */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		DD000005 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				DD100017 /* Components.swift */,
+				DD083B7E /* DeviceStatusBar.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+
+		AC2065B92F0D0E2E0022101F = {
+			isa = PBXGroup;
+			children = (
+				AC2065C42F0D0E2E0022101F /* NetStick */,
+				AC2065C32F0D0E2E0022101F /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		AC2065C32F0D0E2E0022101F /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				AC2065C22F0D0E2E0022101F /* NetStick.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		AC2065C12F0D0E2E0022101F /* NetStick */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AC2065CD2F0D0E300022101F /* Build configuration list for PBXNativeTarget "NetStick" */;
+			buildPhases = (
+				DD300001 /* Sources */,
+				AC2065BF2F0D0E2E0022101F /* Frameworks */,
+				AC2065C02F0D0E2E0022101F /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NetStick;
+			packageProductDependencies = (
+			);
+			productName = NetStick;
+			productReference = AC2065C22F0D0E2E0022101F /* NetStick.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AC2065BA2F0D0E2E0022101F /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = 1;
+				LastSwiftUpdateCheck = 2610;
+				LastUpgradeCheck = 2610;
+				TargetAttributes = {
+					AC2065C12F0D0E2E0022101F = {
+						CreatedOnToolsVersion = 26.1.1;
+					};
+				};
+			};
+			buildConfigurationList = AC2065BD2F0D0E2E0022101F /* Build configuration list for PBXProject "NetStick" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = AC2065B92F0D0E2E0022101F;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = AC2065C32F0D0E2E0022101F /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				AC2065C12F0D0E2E0022101F /* NetStick */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		AC2065C02F0D0E2E0022101F /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD200003 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DD300001 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DD200001 /* NetStickApp.swift in Sources */,
+				DD200002 /* ContentView.swift in Sources */,
+				DD200004 /* BLECommand.swift in Sources */,
+				DD200005 /* NetworkDevice.swift in Sources */,
+				DD200006 /* Vulnerability.swift in Sources */,
+				DD200007 /* BLEResponse.swift in Sources */,
+				DD200008 /* OpenPort.swift in Sources */,
+				DD200009 /* WiFiNetwork.swift in Sources */,
+				DD200010 /* BLEConstants.swift in Sources */,
+				DD200011 /* BluetoothManager.swift in Sources */,
+				DD200012 /* ScannerViewModel.swift in Sources */,
+				DD200013 /* ConnectionView.swift in Sources */,
+				DD200014 /* DeviceDetailView.swift in Sources */,
+				DD200015 /* NetworkScanView.swift in Sources */,
+				DD200016 /* WiFiScanView.swift in Sources */,
+				DD200017 /* Components.swift in Sources */,
+			
+				BB3D4894 /* DeviceStatus.swift in Sources */,
+				BBA4C811 /* DeviceStatusBar.swift in Sources */,);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+
+/* Begin XCBuildConfiguration section */
+		AC2065CB2F0D0E300022101F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEVELOPMENT_TEAM = 6GVVC646PB;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		AC2065CC2F0D0E300022101F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEVELOPMENT_TEAM = 6GVVC646PB;
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 26.1;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		AC2065CE2F0D0E300022101F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACH_O_TYPE = mh_execute;
+				WRAPPER_EXTENSION = app;
+				SKIP_INSTALL = NO;
+				INFOPLIST_KEY_CFBundleExecutable = "$(EXECUTABLE_NAME)";
+
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6GVVC646PB;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "This app needs Bluetooth to communicate with M5Stick network scanner device";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "This app needs Bluetooth to connect to M5Stick network scanner device";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "This app displays network scan results from M5Stick device";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = conv3.NetStick;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		AC2065CF2F0D0E300022101F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				MACH_O_TYPE = mh_execute;
+				WRAPPER_EXTENSION = app;
+				SKIP_INSTALL = NO;
+				INFOPLIST_KEY_CFBundleExecutable = "$(EXECUTABLE_NAME)";
+
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = 6GVVC646PB;
+				ENABLE_PREVIEWS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "This app needs Bluetooth to communicate with M5Stick network scanner device";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "This app needs Bluetooth to connect to M5Stick network scanner device";
+				INFOPLIST_KEY_NSLocalNetworkUsageDescription = "This app displays network scan results from M5Stick device";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_BUNDLE_IDENTIFIER = conv3.NetStick;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRING_CATALOG_GENERATE_SYMBOLS = YES;
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SWIFT_APPROACHABLE_CONCURRENCY = YES;
+				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		AC2065BD2F0D0E2E0022101F /* Build configuration list for PBXProject "NetStick" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC2065CB2F0D0E300022101F /* Debug */,
+				AC2065CC2F0D0E300022101F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AC2065CD2F0D0E300022101F /* Build configuration list for PBXNativeTarget "NetStick" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AC2065CE2F0D0E300022101F /* Debug */,
+				AC2065CF2F0D0E300022101F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AC2065BA2F0D0E2E0022101F /* Project object */;
+}
