@@ -421,7 +421,12 @@ class ScannerViewModel: ObservableObject {
                 percent: response.progress ?? response.percent,
                 btConnected: response.btConnected,
                 wifiConnected: response.wifiConnected,
+<<<<<<< HEAD
                 ssid: response.ssid ?? response.wifi
+=======
+                ssid: response.ssid ?? response.wifi,
+                uptime: response.uptime
+>>>>>>> f55fe60 (chore: add .gitignore and cleanup)
             )
         }
     }
@@ -442,7 +447,15 @@ class ScannerViewModel: ObservableObject {
                 wifi: status.wifi,
                 rssi: status.rssi,
                 stage: stage,
+<<<<<<< HEAD
                 percent: Int(progress * 100)
+=======
+                percent: Int(progress * 100),
+                btConnected: status.btConnected,
+                wifiConnected: status.wifiConnected,
+                ssid: status.ssid,
+                uptime: status.uptimeSeconds
+>>>>>>> f55fe60 (chore: add .gitignore and cleanup)
             )
         }
         

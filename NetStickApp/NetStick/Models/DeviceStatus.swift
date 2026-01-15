@@ -17,6 +17,10 @@ struct DeviceStatus: Codable {
     let btConnected: Bool?
     let wifiConnected: Bool?
     let ssid: String?
+<<<<<<< HEAD
+=======
+    let uptimeSeconds: Int?
+>>>>>>> f55fe60 (chore: add .gitignore and cleanup)
     
     init(
         battery: Int,
@@ -27,7 +31,12 @@ struct DeviceStatus: Codable {
         percent: Int? = nil,
         btConnected: Bool? = nil,
         wifiConnected: Bool? = nil,
+<<<<<<< HEAD
         ssid: String? = nil
+=======
+        ssid: String? = nil,
+        uptime: Int? = nil
+>>>>>>> f55fe60 (chore: add .gitignore and cleanup)
     ) {
         self.battery = battery
         self.charging = charging
@@ -38,6 +47,10 @@ struct DeviceStatus: Codable {
         self.btConnected = btConnected
         self.wifiConnected = wifiConnected
         self.ssid = ssid
+<<<<<<< HEAD
+=======
+        self.uptimeSeconds = uptime
+>>>>>>> f55fe60 (chore: add .gitignore and cleanup)
     }
     
     var batteryLevel: BatteryLevel {
@@ -67,6 +80,23 @@ struct DeviceStatus: Codable {
     var activeStageDescription: String {
         (stage ?? "idle").replacingOccurrences(of: "_", with: " ").capitalized
     }
+<<<<<<< HEAD
+=======
+    
+    var uptimeDescription: String {
+        guard let uptimeSeconds else { return "n/a" }
+        let hours = uptimeSeconds / 3600
+        let minutes = (uptimeSeconds % 3600) / 60
+        let seconds = uptimeSeconds % 60
+        if hours > 0 {
+            return "\(hours)h \(minutes)m"
+        } else if minutes > 0 {
+            return "\(minutes)m \(seconds)s"
+        } else {
+            return "\(seconds)s"
+        }
+    }
+>>>>>>> f55fe60 (chore: add .gitignore and cleanup)
 }
 
 enum BatteryLevel {

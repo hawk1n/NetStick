@@ -32,6 +32,13 @@ struct DeviceStatusBar: View {
                            text: status.activeStageDescription,
                            color: .orange,
                            footer: status.percent.map { "\($0)%"} ?? nil)
+<<<<<<< HEAD
+=======
+                
+                statusChip(icon: "clock",
+                           text: "Uptime \(status.uptimeDescription)",
+                           color: .purple)
+>>>>>>> f55fe60 (chore: add .gitignore and cleanup)
             } else {
                 statusChip(icon: "hourglass", text: "Awaiting status", color: .gray)
             }
@@ -79,12 +86,20 @@ struct DeviceStatusBar: View {
 #Preview {
     VStack {
         DeviceStatusBar(
+<<<<<<< HEAD
             status: DeviceStatus(battery: 85, charging: false, wifi: "MyNetwork", rssi: -55, stage: "network_scan", percent: 42),
+=======
+            status: DeviceStatus(battery: 85, charging: false, wifi: "MyNetwork", rssi: -55, stage: "network_scan", percent: 42, uptime: 7260),
+>>>>>>> f55fe60 (chore: add .gitignore and cleanup)
             bleConnected: true
         )
         
         DeviceStatusBar(
+<<<<<<< HEAD
             status: DeviceStatus(battery: 15, charging: true, wifi: "disconnected", rssi: nil, stage: "idle", percent: 0),
+=======
+            status: DeviceStatus(battery: 15, charging: true, wifi: "disconnected", rssi: nil, stage: "idle", percent: 0, uptime: 180),
+>>>>>>> f55fe60 (chore: add .gitignore and cleanup)
             bleConnected: true
         )
         

@@ -129,8 +129,13 @@ public:
     void sendError(const char* message);
     
     // Status update (periodic)
+<<<<<<< HEAD
     // {"type":"status","battery":N,"charging":true/false,"bt_connected":bool,"wifi_connected":bool,"ssid":"...","rssi":-65,"operation":"...","progress":P}
     void sendStatus(int battery, bool charging, bool btConnected, bool wifiConnected, const char* ssid, int rssi, const char* operation, int progress);
+=======
+    // {"type":"status","battery":N,"charging":true/false,"bt_connected":bool,"wifi_connected":bool,"ssid":"...","rssi":-65,"operation":"...","progress":P,"uptime":S}
+    void sendStatus(int battery, bool charging, bool btConnected, bool wifiConnected, const char* ssid, int rssi, const char* operation, int progress, unsigned long uptimeSeconds);
+>>>>>>> f55fe60 (chore: add .gitignore and cleanup)
 
     // Raw JSON (for custom messages)
     void sendRaw(const char* json);

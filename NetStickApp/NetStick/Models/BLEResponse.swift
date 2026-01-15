@@ -32,6 +32,10 @@ struct BLEResponse: Codable {
     var wifiConnected: Bool? = nil
     var ssid: String? = nil
     var progress: Int? = nil
+<<<<<<< HEAD
+=======
+    var uptime: Int? = nil
+>>>>>>> f55fe60 (chore: add .gitignore and cleanup)
     var networks: [WiFiNetworkDTO]? = nil
     var mac: String? = nil
     var vendor: String? = nil
@@ -59,7 +63,11 @@ struct BLEResponse: Codable {
     var id: String? = nil
     
     enum CodingKeys: String, CodingKey {
+<<<<<<< HEAD
         case type, message, code, details, status, ble, wifi, ip, battery, charging, stage, percent, operation, current, total, rssi, btConnected, wifiConnected, ssid, progress, networks, mac, vendor, count, port, service, banner
+=======
+        case type, message, code, details, status, ble, wifi, ip, battery, charging, stage, percent, operation, current, total, rssi, btConnected, wifiConnected, ssid, progress, uptime, networks, mac, vendor, count, port, service, banner
+>>>>>>> f55fe60 (chore: add .gitignore and cleanup)
         case portProtocol = "protocol"
         case version, target, start, end, os, openPorts, cve, severity, description, vulns, maxSeverity, cmd, requestId, timestamp, domain, action, id
     }

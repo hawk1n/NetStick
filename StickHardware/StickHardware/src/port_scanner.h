@@ -13,8 +13,15 @@ struct PortResult
 {
     uint16_t port;
     bool open;
+<<<<<<< HEAD
     char service[16];
     char banner[BANNER_MAX_SIZE];
+=======
+    char service[32];
+    char banner[BANNER_MAX_SIZE];
+    char version[64];
+    char os[24];
+>>>>>>> f55fe60 (chore: add .gitignore and cleanup)
     bool valid;
 };
 
@@ -39,11 +46,23 @@ public:
     // Returns number of open ports found
     int scanPorts(const char *targetIP, uint16_t startPort, uint16_t endPort,
                   PortFoundCallback callback = nullptr,
+<<<<<<< HEAD
                   PortProgressCallback progressCb = nullptr);
 
     // Scan common ports only (faster)
     int scanCommonPorts(const char *targetIP, PortFoundCallback callback = nullptr,
                         PortProgressCallback progressCb = nullptr);
+=======
+                  PortProgressCallback progressCb = nullptr,
+                  bool detectOS = false,
+                  bool serviceVersion = false);
+
+    // Scan common ports only (faster)
+    int scanCommonPorts(const char *targetIP, PortFoundCallback callback = nullptr,
+                        PortProgressCallback progressCb = nullptr,
+                        bool detectOS = false,
+                        bool serviceVersion = false);
+>>>>>>> f55fe60 (chore: add .gitignore and cleanup)
 
     // Single port check
     bool checkPort(const char *targetIP, uint16_t port, PortResult &result);
@@ -55,6 +74,10 @@ public:
     // Progress tracking
     int getScanProgress() const { return scanProgress; }
     bool isScanning() const { return scanning; }
+<<<<<<< HEAD
+=======
+    const char *getDetectedOS() const { return detectedOS; }
+>>>>>>> f55fe60 (chore: add .gitignore and cleanup)
 
     // Cancel scan
     void cancelScan() { scanCancelled = true; }
@@ -66,12 +89,28 @@ private:
     int scanProgress = 0;
     bool scanning = false;
     bool scanCancelled = false;
+<<<<<<< HEAD
+=======
+    bool detectOSFlag = false;
+    bool serviceVersionFlag = false;
+    bool osDetected = false;
+    char detectedOS[24];
+>>>>>>> f55fe60 (chore: add .gitignore and cleanup)
 
     // TCP connect with timeout
     bool tcpConnect(const char *host, uint16_t port, int timeoutMs);
 
     // Grab banner from open connection
     bool grabBanner(WiFiClient &client, char *buffer, size_t bufferSize, int timeoutMs);
+<<<<<<< HEAD
+=======
+
+    void configureScanOptions(bool detectOS, bool serviceVersion);
+    void ensureOsDetected(const char *targetIP);
+    bool detectOS(const char *targetIP, char *buffer, size_t bufferSize);
+    bool fetchServiceVersion(const char *targetIP, uint16_t port, const char *service, const char *banner, char *buffer, size_t bufferSize);
+    void determineService(const char *targetIP, uint16_t port, PortResult &result);
+>>>>>>> f55fe60 (chore: add .gitignore and cleanup)
 };
 
 extern PortScanner portScanner;

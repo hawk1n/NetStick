@@ -580,7 +580,14 @@ void BluetoothHandler::sendPortSummary(uint16_t startPort, uint16_t endPort, con
         {
             obj["banner"] = res.banner;
         }
+<<<<<<< HEAD
         obj["version"] = ""; // no version parsing on device
+=======
+        if (strlen(res.version) > 0)
+        {
+            obj["version"] = res.version;
+        }
+>>>>>>> f55fe60 (chore: add .gitignore and cleanup)
     }
 
     String output;
@@ -618,14 +625,24 @@ void BluetoothHandler::sendError(const char *message)
     sendNotification(buf);
 }
 
+<<<<<<< HEAD
 void BluetoothHandler::sendStatus(int battery, bool charging, bool btConnected, bool wifiConnected, const char *ssid, int rssi, const char *operation, int progress)
+=======
+void BluetoothHandler::sendStatus(int battery, bool charging, bool btConnected, bool wifiConnected, const char *ssid, int rssi, const char *operation, int progress, unsigned long uptimeSeconds)
+>>>>>>> f55fe60 (chore: add .gitignore and cleanup)
 {
     char escapedSsid[32] = {0};
     escapeJsonString(ssid ? ssid : "unknown", escapedSsid, sizeof(escapedSsid));
 
+<<<<<<< HEAD
     char buf[192];
     snprintf(buf, sizeof(buf),
              "{\"type\":\"status\",\"battery\":%d,\"charging\":%s,\"bt_connected\":%s,\"wifi_connected\":%s,\"ssid\":\"%s\",\"rssi\":%d,\"operation\":\"%s\",\"progress\":%d}",
+=======
+    char buf[224];
+    snprintf(buf, sizeof(buf),
+             "{\"type\":\"status\",\"battery\":%d,\"charging\":%s,\"bt_connected\":%s,\"wifi_connected\":%s,\"ssid\":\"%s\",\"rssi\":%d,\"operation\":\"%s\",\"progress\":%d,\"uptime\":%lu}",
+>>>>>>> f55fe60 (chore: add .gitignore and cleanup)
              battery,
              charging ? "true" : "false",
              btConnected ? "true" : "false",
@@ -633,7 +650,12 @@ void BluetoothHandler::sendStatus(int battery, bool charging, bool btConnected, 
              escapedSsid,
              rssi,
              operation ? operation : "idle",
+<<<<<<< HEAD
              progress);
+=======
+             progress,
+             uptimeSeconds);
+>>>>>>> f55fe60 (chore: add .gitignore and cleanup)
     sendNotification(buf);
 }
 

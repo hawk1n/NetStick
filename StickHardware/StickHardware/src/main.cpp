@@ -23,11 +23,21 @@
 static unsigned long lastActivityTime = 0;
 static bool legalWarningAcknowledged = false;
 static int batteryLevel = 100;
+<<<<<<< HEAD
+=======
+static const char *progressStage = "port_scan";
+static unsigned long lastStatusUpdate = 0;
+static const unsigned long STATUS_UPDATE_INTERVAL_MS = 5000;
+>>>>>>> f55fe60 (chore: add .gitignore and cleanup)
 
 // Progress helpers (to avoid capturing lambdas with function pointers)
 static char progressSubnet[24] = {0};
 static char progressTargetIP[16] = {0};
 static uint16_t progressTotalPorts = 0;
+<<<<<<< HEAD
+=======
+static char currentPortTarget[16] = {0};
+>>>>>>> f55fe60 (chore: add .gitignore and cleanup)
 
 // Map command to human-readable label for on-screen echo
 const char *commandName(BLECommand cmd)
@@ -115,6 +125,48 @@ uint32_t simpleCrc32(const uint8_t *data, size_t len)
     return ~crc;
 }
 
+<<<<<<< HEAD
+=======
+void sendStatusUpdate(const char *stageOverride = nullptr, int progressOverride = -1)
+{
+    if (!bleHandler.isConnected())
+    {
+        return;
+    }
+
+    int currentBattery = M5.Power.getBatteryLevel();
+    bool charging = M5.Power.isCharging();
+    bool wifiConnected = wifiScanner.isConnected();
+    int rssi = wifiConnected ? wifiScanner.getRSSI() : -100;
+    String ssid = wifiConnected ? wifiScanner.getSSID() : "disconnected";
+
+    const char *operation = "idle";
+    int progress = 0;
+    if (stageOverride)
+    {
+        operation = stageOverride;
+    }
+    else if (networkScanner.isScanning())
+    {
+        operation = "network_scan";
+        progress = networkScanner.getScanProgress();
+    }
+    else if (portScanner.isScanning())
+    {
+        operation = progressStage;
+        progress = portScanner.getScanProgress();
+    }
+    if (progressOverride >= 0)
+    {
+        progress = progressOverride;
+    }
+
+    unsigned long uptimeSeconds = millis() / 1000UL;
+    bleHandler.sendStatus(currentBattery, charging, bleHandler.isConnected(), wifiConnected,
+                          ssid.c_str(), rssi, operation, progress, uptimeSeconds);
+}
+
+>>>>>>> f55fe60 (chore: add .gitignore and cleanup)
 bool base64Encode(const uint8_t *data, size_t len, String &out)
 {
     size_t needed = 0;
@@ -145,7 +197,11 @@ void onPortProgress(uint16_t currentPort, int percent, int openCount)
 {
     displayManager.showPortScan(progressTargetIP, currentPort, progressTotalPorts, openCount);
     int current = (percent * progressPortTotal) / 100;
+<<<<<<< HEAD
     bleHandler.sendProgress("port_scan", current, progressPortTotal);
+=======
+    bleHandler.sendProgress(progressStage, current, progressPortTotal);
+>>>>>>> f55fe60 (chore: add .gitignore and cleanup)
 }
 
 // ============================================================================
@@ -174,6 +230,20 @@ void onPortFound(const PortResult &result)
         result.port,
         result.service,
         result.banner);
+<<<<<<< HEAD
+=======
+
+    // Extended raw event with version/target
+    if (currentPortTarget[0] != '\0')
+    {
+        bleHandler.sendPortRaw(
+            result.port,
+            currentPortTarget,
+            result.service,
+            result.banner,
+            (result.version[0] != '\0') ? result.version : nullptr);
+    }
+>>>>>>> f55fe60 (chore: add .gitignore and cleanup)
 }
 
 void onVulnFound(const Vulnerability &vuln)
@@ -354,20 +424,89 @@ void processCommand(const CommandData &cmd)
         strncpy(progressTargetIP, cmd.targetIP, sizeof(progressTargetIP) - 1);
         progressTotalPorts = cmd.portEnd - cmd.portStart + 1;
         progressPortTotal = progressTotalPorts;
+<<<<<<< HEAD
+=======
+        progressStage = "port_scan";
+        strncpy(currentPortTarget, cmd.targetIP, sizeof(currentPortTarget) - 1);
+        currentPortTarget[sizeof(currentPortTarget) - 1] = '\0';
+>>>>>>> f55fe60 (chore: add .gitignore and cleanup)
 
         displayManager.showPortScan(cmd.targetIP, 0, progressTotalPorts, 0);
 
         portScanner.init();
 
         // Scan ports - callback sends each open port via BLE
+<<<<<<< HEAD
         portScanner.scanPorts(cmd.targetIP, cmd.portStart, cmd.portEnd, [](const PortResult &result)
                               { bleHandler.sendPortResult(result.port, result.service, result.banner); }, onPortProgress);
+=======
+        portScanner.scanPorts(cmd.targetIP, cmd.portStart, cmd.portEnd,
+                              onPortFound,
+                              onPortProgress,
+                              false,
+                              true);
+>>>>>>> f55fe60 (chore: add .gitignore and cleanup)
 
         // Send completion event
         bleHandler.sendPortDone(portScanner.getOpenPortCount());
 
         displayManager.showPortScan(cmd.targetIP, 100, 100, portScanner.getOpenPortCount());
         displayManager.showMessage("Port scan done", COLOR_OK, 2000);
+<<<<<<< HEAD
+=======
+        currentPortTarget[0] = '\0';
+        break;
+    }
+
+    case BLECommand::ADVANCED_SCAN:
+    {
+        Serial.printf("[Main] Processing: advanced_scan %s:%d-%d (OS:%d, SV:%d)\n",
+                      cmd.targetIP, cmd.portStart, cmd.portEnd, cmd.osDetect, cmd.serviceVersion);
+
+        if (!wifiScanner.isConnected())
+        {
+            bleHandler.sendError("WiFi not connected");
+            displayManager.showError("Not connected");
+            break;
+        }
+
+        displayManager.showMessage("Advanced scan...", COLOR_PROGRESS, 3000);
+
+        strncpy(progressTargetIP, cmd.targetIP, sizeof(progressTargetIP) - 1);
+        progressTotalPorts = cmd.portEnd - cmd.portStart + 1;
+        progressPortTotal = progressTotalPorts;
+        progressStage = "advanced_scan";
+        strncpy(currentPortTarget, cmd.targetIP, sizeof(currentPortTarget) - 1);
+        currentPortTarget[sizeof(currentPortTarget) - 1] = '\0';
+
+        displayManager.showPortScan(cmd.targetIP, 0, progressTotalPorts, 0);
+
+        portScanner.init();
+
+        portScanner.scanPorts(cmd.targetIP, cmd.portStart, cmd.portEnd,
+                              onPortFound,
+                              onPortProgress,
+                              cmd.osDetect,
+                              cmd.serviceVersion);
+
+        const char *osLabel = cmd.osDetect ? portScanner.getDetectedOS() : "unknown";
+        bleHandler.sendPortSummary(cmd.portStart, cmd.portEnd, cmd.targetIP, osLabel, portScanner);
+
+        // Send completion event
+        bleHandler.sendPortDone(portScanner.getOpenPortCount());
+
+        displayManager.showPortScan(cmd.targetIP, 100, 100, portScanner.getOpenPortCount());
+        displayManager.showMessage("Advanced scan done", COLOR_OK, 2000);
+        currentPortTarget[0] = '\0';
+        break;
+    }
+
+    case BLECommand::STATUS:
+    {
+        Serial.println("[Main] Processing: status");
+        sendStatusUpdate();
+        displayManager.showMessage("Status sent", COLOR_INFO, 1500);
+>>>>>>> f55fe60 (chore: add .gitignore and cleanup)
         break;
     }
 
@@ -458,6 +597,16 @@ void loop()
     // Update display periodically
     displayManager.refresh();
 
+<<<<<<< HEAD
+=======
+    // Periodic status push
+    if (millis() - lastStatusUpdate > STATUS_UPDATE_INTERVAL_MS)
+    {
+        lastStatusUpdate = millis();
+        sendStatusUpdate();
+    }
+
+>>>>>>> f55fe60 (chore: add .gitignore and cleanup)
     // Check button for status display
     if (M5.BtnA.wasPressed())
     {
